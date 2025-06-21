@@ -119,9 +119,10 @@ const Index = () => {
         </div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-          {/* Left Column - Upload & Colors */}
-          <div className="space-y-6">
+        <div className="space-y-8 max-w-7xl mx-auto">
+          {/* Top Row - Image Upload and Color Palette */}
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Left Column - Upload */}
             <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="flex items-center">
@@ -141,6 +142,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
+            {/* Right Column - Color Palette */}
             {extractedColors.length > 0 && (
               <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
                 <CardHeader>
@@ -162,24 +164,22 @@ const Index = () => {
             )}
           </div>
 
-          {/* Right Column - Code Output */}
+          {/* Bottom Row - Code Output */}
           {extractedColors.length > 0 && (
-            <div>
-              <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Code2 className="w-5 h-5 mr-2" />
-                    Ready-to-use Code
-                  </CardTitle>
-                  <CardDescription>
-                    Copy and paste into your project
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <CodeOutput colors={extractedColors} />
-                </CardContent>
-              </Card>
-            </div>
+            <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Code2 className="w-5 h-5 mr-2" />
+                  Ready-to-use Code
+                </CardTitle>
+                <CardDescription>
+                  Copy and paste into your project
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <CodeOutput colors={extractedColors} />
+              </CardContent>
+            </Card>
           )}
         </div>
       </section>
