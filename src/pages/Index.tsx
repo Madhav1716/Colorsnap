@@ -66,24 +66,24 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                <Palette className="w-6 h-6 text-white" />
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                <Palette className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   PaletteLift
                 </h1>
-                <p className="text-sm text-gray-600">Images to Color Palettes</p>
+                <p className="text-xs sm:text-sm text-gray-600">Images to Color Palettes</p>
               </div>
             </div>
-            <div className="flex items-center space-x-2">
-              <Button variant="ghost" size="sm" className="text-gray-600">
-                <Github className="w-4 h-4 mr-2" />
-                Star
+            <div className="flex items-center space-x-1 sm:space-x-2">
+              <Button variant="ghost" size="sm" className="text-gray-600 text-xs sm:text-sm">
+                <Github className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                <span className="hidden sm:inline">Star</span>
               </Button>
-              <Button variant="ghost" size="sm" className="text-red-500">
-                <Heart className="w-4 h-4 mr-2" />
-                Support
+              <Button variant="ghost" size="sm" className="text-red-500 text-xs sm:text-sm">
+                <Heart className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                <span className="hidden sm:inline">Support</span>
               </Button>
             </div>
           </div>
@@ -91,49 +91,49 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="text-center max-w-4xl mx-auto mb-12">
-          <h2 className="text-5xl font-bold text-gray-900 mb-6">
+      <section className="container mx-auto px-4 py-8 sm:py-12">
+        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             Turn Images Into
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent block">
               Perfect Color Palettes
             </span>
           </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
             Upload any image and instantly extract dominant colors. Get ready-to-use Tailwind CSS themes and CSS variables in seconds.
           </p>
-          <div className="flex items-center justify-center space-x-8 text-sm text-gray-500">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 md:space-x-8 text-xs sm:text-sm text-gray-500">
             <div className="flex items-center">
-              <FileImage className="w-4 h-4 mr-2" />
+              <FileImage className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
               Browser-based
             </div>
             <div className="flex items-center">
-              <Code2 className="w-4 h-4 mr-2" />
+              <Code2 className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
               Developer-ready
             </div>
             <div className="flex items-center">
-              <Download className="w-4 h-4 mr-2" />
+              <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
               Instant export
             </div>
           </div>
         </div>
 
         {/* Main Content */}
-        <div className="space-y-8 max-w-7xl mx-auto">
+        <div className="space-y-6 sm:space-y-8 max-w-7xl mx-auto">
           {/* Top Row - Image Upload and Color Palette */}
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8">
             {/* Left Column - Upload */}
             <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Upload className="w-5 h-5 mr-2" />
+              <CardHeader className="p-4 sm:p-6">
+                <CardTitle className="flex items-center text-lg sm:text-xl">
+                  <Upload className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                   Upload Image
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="text-sm">
                   Drag and drop or click to upload an image
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="p-4 sm:p-6 pt-0">
                 <ImageUpload
                   onImageUpload={handleImageUpload}
                   isProcessing={isProcessing}
@@ -145,16 +145,16 @@ const Index = () => {
             {/* Right Column - Color Palette */}
             {extractedColors.length > 0 && (
               <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Palette className="w-5 h-5 mr-2" />
+                <CardHeader className="p-4 sm:p-6">
+                  <CardTitle className="flex items-center text-lg sm:text-xl">
+                    <Palette className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     Extracted Colors
                   </CardTitle>
-                  <CardDescription>
+                  <CardDescription className="text-sm">
                     Click any color to copy to clipboard
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="p-4 sm:p-6 pt-0">
                   <ColorPalette
                     colors={extractedColors}
                     onCopyColor={handleCopyColor}
@@ -167,16 +167,16 @@ const Index = () => {
           {/* Bottom Row - Code Output */}
           {extractedColors.length > 0 && (
             <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Code2 className="w-5 h-5 mr-2" />
+              <CardHeader className="p-4 sm:p-6">
+                <CardTitle className="flex items-center text-lg sm:text-xl">
+                  <Code2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                   Ready-to-use Code
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="text-sm">
                   Copy and paste into your project
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="p-4 sm:p-6 pt-0">
                 <CodeOutput colors={extractedColors} />
               </CardContent>
             </Card>
@@ -185,13 +185,13 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t bg-white/50 backdrop-blur-sm mt-20">
-        <div className="container mx-auto px-4 py-8">
+      <footer className="border-t bg-white/50 backdrop-blur-sm mt-12 sm:mt-20">
+        <div className="container mx-auto px-4 py-6 sm:py-8">
           <div className="text-center text-gray-600">
-            <p className="mb-2">
-              Made with <Heart className="w-4 h-4 inline text-red-500" /> for developers and designers
+            <p className="mb-2 text-sm sm:text-base">
+              Made with <Heart className="w-3 h-3 sm:w-4 sm:h-4 inline text-red-500" /> for developers and designers
             </p>
-            <p className="text-sm">
+            <p className="text-xs sm:text-sm">
               All processing happens in your browser. No images are uploaded to servers.
             </p>
           </div>
