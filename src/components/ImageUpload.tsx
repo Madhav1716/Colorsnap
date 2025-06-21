@@ -1,5 +1,5 @@
 
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, memo } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Upload, Image as ImageIcon, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -10,7 +10,7 @@ interface ImageUploadProps {
   uploadedImage: string | null;
 }
 
-const ImageUpload = ({ onImageUpload, isProcessing, uploadedImage }: ImageUploadProps) => {
+const ImageUpload = memo(({ onImageUpload, isProcessing, uploadedImage }: ImageUploadProps) => {
   const [dragActive, setDragActive] = useState(false);
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
@@ -20,14 +20,17 @@ const ImageUpload = ({ onImageUpload, isProcessing, uploadedImage }: ImageUpload
     setDragActive(false);
   }, [onImageUpload]);
 
+  const handleDragEnter = useCallback(() => setDragActive(true), []);
+  const handleDragLeave = useCallback(() => setDragActive(false), []);
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
       'image/*': ['.jpeg', '.jpg', '.png', '.gif', '.bmp', '.webp']
     },
     multiple: false,
-    onDragEnter: () => setDragActive(true),
-    onDragLeave: () => setDragActive(false)
+    onDragEnter: handleDragEnter,
+    onDragLeave: handleDragLeave
   });
 
   return (
@@ -50,6 +53,8 @@ const ImageUpload = ({ onImageUpload, isProcessing, uploadedImage }: ImageUpload
                 src={uploadedImage}
                 alt="Uploaded"
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
               {isProcessing && (
                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
@@ -91,6 +96,8 @@ const ImageUpload = ({ onImageUpload, isProcessing, uploadedImage }: ImageUpload
       </div>
     </div>
   );
-};
+});
+
+ImageUpload.displayName = 'ImageUpload';
 
 export default ImageUpload;

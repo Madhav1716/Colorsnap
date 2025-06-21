@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, memo, useMemo, useCallback } from 'react';
 import { Copy, Check } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Color } from '@/pages/Index';
@@ -10,26 +9,26 @@ interface ColorPaletteProps {
   onCopyColor: (color: string) => void;
 }
 
-const ColorPalette = ({ colors, onCopyColor }: ColorPaletteProps) => {
+const ColorPalette = memo(({ colors, onCopyColor }: ColorPaletteProps) => {
   const [copiedColor, setCopiedColor] = useState<string | null>(null);
 
-  const handleCopyColor = (color: string) => {
+  const handleCopyColor = useCallback((color: string) => {
     onCopyColor(color);
     setCopiedColor(color);
     setTimeout(() => setCopiedColor(null), 2000);
-  };
+  }, [onCopyColor]);
 
-  // Helper functions to convert colors
-  const hexToRgb = (hex: string) => {
+  // Memoize color conversion functions
+  const hexToRgb = useCallback((hex: string) => {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result ? {
       r: parseInt(result[1], 16),
       g: parseInt(result[2], 16),
       b: parseInt(result[3], 16)
     } : null;
-  };
+  }, []);
 
-  const rgbToHsl = (r: number, g: number, b: number) => {
+  const rgbToHsl = useCallback((r: number, g: number, b: number) => {
     r /= 255;
     g /= 255;
     b /= 255;
@@ -54,9 +53,9 @@ const ColorPalette = ({ colors, onCopyColor }: ColorPaletteProps) => {
       s: Math.round(s * 100),
       l: Math.round(l * 100)
     };
-  };
+  }, []);
 
-  const rgbToCmyk = (r: number, g: number, b: number) => {
+  const rgbToCmyk = useCallback((r: number, g: number, b: number) => {
     r /= 255;
     g /= 255;
     b /= 255;
@@ -72,10 +71,9 @@ const ColorPalette = ({ colors, onCopyColor }: ColorPaletteProps) => {
       y: Math.round(y * 100),
       k: Math.round(k * 100)
     };
-  };
+  }, []);
 
-  const rgbToLab = (r: number, g: number, b: number) => {
-    // Simple approximation - not precise but good enough for display
+  const rgbToLab = useCallback((r: number, g: number, b: number) => {
     const x = r * 0.412453 + g * 0.357580 + b * 0.180423;
     const y = r * 0.212671 + g * 0.715160 + b * 0.072169;
     const z = r * 0.019334 + g * 0.119193 + b * 0.950227;
@@ -89,24 +87,27 @@ const ColorPalette = ({ colors, onCopyColor }: ColorPaletteProps) => {
       a: Math.round(a * 100) / 100,
       b: Math.round(bLab * 100) / 100
     };
-  };
+  }, []);
 
-  const getColorFormats = (color: Color) => {
-    const rgb = hexToRgb(color.hex);
-    if (!rgb) return null;
+  // Memoize color formats calculation
+  const colorFormats = useMemo(() => {
+    return colors.map(color => {
+      const rgb = hexToRgb(color.hex);
+      if (!rgb) return null;
 
-    const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
-    const cmyk = rgbToCmyk(rgb.r, rgb.g, rgb.b);
-    const lab = rgbToLab(rgb.r, rgb.g, rgb.b);
+      const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+      const cmyk = rgbToCmyk(rgb.r, rgb.g, rgb.b);
+      const lab = rgbToLab(rgb.r, rgb.g, rgb.b);
 
-    return {
-      hex: color.hex,
-      rgb: `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`,
-      hsl: `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`,
-      cmyk: `${cmyk.c}, ${cmyk.m}, ${cmyk.y}, ${cmyk.k}`,
-      lab: `${lab.l}, ${lab.a}, ${lab.b}`
-    };
-  };
+      return {
+        hex: color.hex,
+        rgb: `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`,
+        hsl: `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`,
+        cmyk: `${cmyk.c}, ${cmyk.m}, ${cmyk.y}, ${cmyk.k}`,
+        lab: `${lab.l}, ${lab.a}, ${lab.b}`
+      };
+    });
+  }, [colors, hexToRgb, rgbToHsl, rgbToCmyk, rgbToLab]);
 
   return (
     <div className="space-y-4">
@@ -155,7 +156,7 @@ const ColorPalette = ({ colors, onCopyColor }: ColorPaletteProps) => {
               <p className="text-xs text-gray-600">Web design, Tailwind, CSS</p>
             </div>
             {colors.map((color, index) => {
-              const formats = getColorFormats(color);
+              const formats = colorFormats[index];
               return (
                 <div
                   key={index}
@@ -190,7 +191,7 @@ const ColorPalette = ({ colors, onCopyColor }: ColorPaletteProps) => {
               <p className="text-xs text-gray-600">Canvas, CSS filters, digital design</p>
             </div>
             {colors.map((color, index) => {
-              const formats = getColorFormats(color);
+              const formats = colorFormats[index];
               return (
                 <div
                   key={index}
@@ -225,7 +226,7 @@ const ColorPalette = ({ colors, onCopyColor }: ColorPaletteProps) => {
               <p className="text-xs text-gray-600">Advanced color manipulation</p>
             </div>
             {colors.map((color, index) => {
-              const formats = getColorFormats(color);
+              const formats = colorFormats[index];
               return (
                 <div
                   key={index}
@@ -260,7 +261,7 @@ const ColorPalette = ({ colors, onCopyColor }: ColorPaletteProps) => {
               <p className="text-xs text-gray-600">Print design</p>
             </div>
             {colors.map((color, index) => {
-              const formats = getColorFormats(color);
+              const formats = colorFormats[index];
               return (
                 <div
                   key={index}
@@ -295,7 +296,7 @@ const ColorPalette = ({ colors, onCopyColor }: ColorPaletteProps) => {
               <p className="text-xs text-gray-600">Accessible design contrast</p>
             </div>
             {colors.map((color, index) => {
-              const formats = getColorFormats(color);
+              const formats = colorFormats[index];
               return (
                 <div
                   key={index}
@@ -327,6 +328,8 @@ const ColorPalette = ({ colors, onCopyColor }: ColorPaletteProps) => {
       </div>
     </div>
   );
-};
+});
+
+ColorPalette.displayName = 'ColorPalette';
 
 export default ColorPalette;

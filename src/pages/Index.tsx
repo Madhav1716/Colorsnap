@@ -1,9 +1,8 @@
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { Upload, Download, Copy, Palette, Code2, FileImage, Check, Github, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import ImageUpload from '@/components/ImageUpload';
 import ColorPalette from '@/components/ColorPalette';
@@ -22,7 +21,7 @@ const Index = () => {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const { toast } = useToast();
 
-  const handleImageUpload = async (file: File) => {
+  const handleImageUpload = useCallback(async (file: File) => {
     setIsProcessing(true);
     try {
       const imageUrl = URL.createObjectURL(file);
@@ -49,15 +48,18 @@ const Index = () => {
         variant: "destructive",
       });
     }
-  };
+  }, [toast]);
 
-  const handleCopyColor = (color: string) => {
+  const handleCopyColor = useCallback((color: string) => {
     navigator.clipboard.writeText(color);
     toast({
       title: "Copied to clipboard!",
       description: `${color} copied successfully.`,
     });
-  };
+  }, [toast]);
+
+  // Memoize the color display check
+  const hasColors = useMemo(() => extractedColors.length > 0, [extractedColors.length]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
@@ -121,7 +123,7 @@ const Index = () => {
         {/* Main Content */}
         <div className="space-y-6 sm:space-y-8 max-w-7xl mx-auto">
           {/* Top Row - Image Upload and Color Palette */}
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             {/* Left Column - Upload */}
             <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
               <CardHeader className="p-4 sm:p-6">
@@ -143,7 +145,7 @@ const Index = () => {
             </Card>
 
             {/* Right Column - Color Palette */}
-            {extractedColors.length > 0 && (
+            {hasColors && (
               <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
                 <CardHeader className="p-4 sm:p-6">
                   <CardTitle className="flex items-center text-lg sm:text-xl">
@@ -165,7 +167,7 @@ const Index = () => {
           </div>
 
           {/* Bottom Row - Code Output */}
-          {extractedColors.length > 0 && (
+          {hasColors && (
             <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
               <CardHeader className="p-4 sm:p-6">
                 <CardTitle className="flex items-center text-lg sm:text-xl">
