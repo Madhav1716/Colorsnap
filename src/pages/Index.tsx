@@ -275,18 +275,6 @@ const Index = () => {
                 </Link>
               </div>
               <div className="flex items-center space-x-1 sm:space-x-2">
-                <Button asChild variant="ghost" size="sm" className="text-[#23394a] text-xs sm:text-sm">
-                  <Link to="/about">
-                    <Info className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                    <span className="hidden sm:inline">About</span>
-                  </Link>
-                </Button>
-                <Button asChild variant="ghost" size="sm" className="text-[#23394a] text-xs sm:text-sm">
-                  <Link to="/faq">
-                    <HelpCircle className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                    <span className="hidden sm:inline">FAQ</span>
-                  </Link>
-                </Button>
                 <Button
                   variant="ghost"
                   size="sm"
