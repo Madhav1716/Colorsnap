@@ -75,10 +75,7 @@ export const metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
-    bing: "REPLACE_WITH_BING_WEBMASTER_TOOLS_VERIFICATION_CODE",
+    yandex: "0d5dbc3686e82fee",
   },
   alternates: {
     canonical: "https://colorsnap.design",
