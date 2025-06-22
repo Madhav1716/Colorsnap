@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from 'react';
 import { ChevronDown, ChevronUp, ArrowLeft, Heart, Palette, Zap, Smartphone, Shield, Eye, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,15 +14,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useMetadata } from "@/hooks/useMetadata";
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const FAQ = () => {
-  // SEO: Apply metadata using custom hook
-  useMetadata();
-
   // Custom SEO metadata for FAQ page
   const faqMetadata = {
     title: "FAQ - ColorSnap Color Extraction Tool Questions & Answers",
