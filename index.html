@@ -2,21 +2,145 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>color-canvas-convert</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-
-    <meta property="og:title" content="color-canvas-convert" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <title>ColorSnap</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="🎨 Extract Color Palette from Image – ColorSnap" />
+    <meta name="description" content="Get HEX, RGB, and Tailwind CSS themes from any image. Generate color palettes instantly with ColorSnap. Free online color extraction tool for designers and developers." />
+    <meta name="keywords" content="color palette, color extractor, image colors, HEX codes, RGB values, Tailwind CSS, color picker, design tools, web design, color scheme generator" />
+    <meta name="author" content="ColorSnap" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:url" content="https://colorsnap.design/" />
+    <meta property="og:title" content="🎨 Extract Color Palette from Image – ColorSnap" />
+    <meta property="og:description" content="Get HEX, RGB, and Tailwind CSS themes from any image. Generate color palettes instantly with ColorSnap. Free online color extraction tool for designers and developers." />
+    <meta property="og:image" content="https://colorsnap.design/preview.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="ColorSnap" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://colorsnap.design/" />
+    <meta property="twitter:title" content="🎨 Extract Color Palette from Image – ColorSnap" />
+    <meta property="twitter:description" content="Get HEX, RGB, and Tailwind CSS themes from any image. Generate color palettes instantly with ColorSnap. Free online color extraction tool for designers and developers." />
+    <meta property="twitter:image" content="https://colorsnap.design/preview.jpg" />
+    <meta property="twitter:creator" content="@colorsnap" />
+    <meta property="twitter:site" content="@colorsnap" />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ColorSnap",
+      "url": "https://colorsnap.design",
+      "description": "Extract color palettes from images with instant HEX, RGB, and Tailwind CSS code generation",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "screenshot": "https://colorsnap.design/preview.jpg",
+      "featureList": [
+        "Image color extraction",
+        "HEX color codes",
+        "RGB color values", 
+        "Tailwind CSS integration",
+        "Drag and drop upload",
+        "Privacy-first processing"
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "ColorSnap"
+      },
+      "publisher": {
+        "@type": "Organization", 
+        "name": "ColorSnap"
+      },
+      "mainEntity": {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does ColorSnap work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ColorSnap uses advanced color extraction algorithms to analyze uploaded images and extract the most dominant colors. Simply upload an image and get instant HEX, RGB, and Tailwind CSS color codes that you can copy and use in your projects."
+            }
+          },
+          {
+            "@type": "Question", 
+            "name": "What file formats does ColorSnap support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ColorSnap supports all common image formats including JPG, PNG, GIF, WebP, and SVG files. The tool works with any image you can upload to your browser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is ColorSnap free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer", 
+              "text": "Yes, ColorSnap is completely free to use. No registration required, no hidden fees, and your images are processed locally in your browser for privacy."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use ColorSnap for commercial projects?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely! All color palettes generated by ColorSnap are free to use in any project, including commercial work. The tool is designed for professional designers and developers."
+            }
+          }
+        ]
+      },
+      "sameAs": [
+        "https://twitter.com/colorsnap"
+      ]
+    }
+    </script>
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#23394a" />
+    <meta name="msapplication-TileColor" content="#23394a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="ColorSnap" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://colorsnap.design" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Favicon and App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#23394a" />
+    <meta name="msapplication-TileColor" content="#23394a" />
+    <meta name="theme-color" content="#23394a" />
+    
+    <!-- Open Graph Images -->
+    <meta name="image" content="https://colorsnap.design/preview.jpg" />
+    <meta property="og:image:secure_url" content="https://colorsnap.design/preview.jpg" />
+    <meta name="twitter:image:alt" content="ColorSnap - Color palette extraction tool showing vibrant color swatches and HEX codes" />
   </head>
-
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

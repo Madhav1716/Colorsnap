@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
@@ -61,7 +62,22 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom ColorSnap brand colors
+				'vivid-teal': '#49a8b0',
+				'dark-charcoal': '#23394a',
+				'slate-gray': '#6b7280',
+				'bright-coral': '#fc6c2c',
+				'soft-lavender': '#e5e7eb',
+				// ColorSnap Logo Palette
+				'logo-orange': '#fbac3e',
+				'logo-navy': '#23394a',
+				'logo-blue': '#289de1',
+				'logo-yellow': '#fbcd33',
+				'logo-orange-dark': '#fb7334',
+				'logo-light': '#f0f2f2',
+				'logo-coral': '#ec642c',
+				'logo-blue-dark': '#2464e4',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -92,5 +108,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate],
 } satisfies Config;
