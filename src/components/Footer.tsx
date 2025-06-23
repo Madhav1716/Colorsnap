@@ -52,8 +52,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="border-t pt-6 text-center text-logo-navy/80">
           <p className="mb-2 text-sm sm:text-base">
-            Made with <Heart className="w-3 h-3 sm:w-4 sm:h-4 inline text-logo-orange-dark" /> for
-            developers and designers
+            Free, open, and made for the creative community.
           </p>
           <p className="text-xs sm:text-sm">
             ColorSnap is a powerful online image color picker tool that extracts dominant colors
