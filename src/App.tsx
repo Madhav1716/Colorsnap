@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/next";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
@@ -35,20 +36,45 @@ const App = () => {
               <Route path="/about" element={<About />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/privacy" element={<Privacy />} />
-              <Route path="/blog/best-free-color-palette-generators-2025" element={<BlogBestFreePalette2025 />} />
-              <Route path="/blog/extract-color-from-image-free" element={<BlogExtractColor />} />
-              <Route path="/how-to-get-tailwind-theme-from-image" element={<BlogTailwindTheme />} />
-              <Route path="/blog/extract-hex-codes-from-photos" element={<ExtractHexCodesFromPhotos />} />
-              <Route path="/blog/image-to-tailwind-theme" element={<ImageToTailwindTheme />} />
-              <Route path="/blog/best-free-color-palette-tools-2025-compare" element={<BestFreePaletteTools2025Compare />} />
-              <Route path="/blog/photo-to-css-gradient-generator" element={<PhotoToCssGradientGenerator />} />
-              <Route path="/blog/extract-dominant-color-from-image-branding" element={<ExtractDominantColorBranding />} />
+              <Route
+                path="/blog/best-free-color-palette-generators-2025"
+                element={<BlogBestFreePalette2025 />}
+              />
+              <Route
+                path="/blog/extract-color-from-image-free"
+                element={<BlogExtractColor />}
+              />
+              <Route
+                path="/how-to-get-tailwind-theme-from-image"
+                element={<BlogTailwindTheme />}
+              />
+              <Route
+                path="/blog/extract-hex-codes-from-photos"
+                element={<ExtractHexCodesFromPhotos />}
+              />
+              <Route
+                path="/blog/image-to-tailwind-theme"
+                element={<ImageToTailwindTheme />}
+              />
+              <Route
+                path="/blog/best-free-color-palette-tools-2025-compare"
+                element={<BestFreePaletteTools2025Compare />}
+              />
+              <Route
+                path="/blog/photo-to-css-gradient-generator"
+                element={<PhotoToCssGradientGenerator />}
+              />
+              <Route
+                path="/blog/extract-dominant-color-from-image-branding"
+                element={<ExtractDominantColorBranding />}
+              />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
+      <Analytics />
     </HelmetProvider>
   );
 };
