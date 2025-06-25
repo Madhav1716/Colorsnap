@@ -143,148 +143,148 @@ const About: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-      {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center overflow-hidden">
-                  <img
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+        {/* Header */}
+        <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+          <div className="container mx-auto px-4 py-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center overflow-hidden">
+                    <img
                     src="/favicon-512x512.webp"
-                    alt="ColorSnap Logo"
-                    className="w-full h-full object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <div>
-                  <h1 className="text-xl sm:text-2xl font-bold text-vivid-teal">
-                    ColorSnap
-                  </h1>
-                  <p className="text-xs sm:text-sm text-dark-charcoal">
-                    Images to Color Palettes
-                  </p>
-                </div>
-              </Link>
-            </div>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => navigate(-1)}
-              className="text-dark-charcoal border-dark-charcoal hover:bg-vivid-teal hover:text-white"
-              aria-label="Return to previous page"
-            >
-              ← Back to Tool
-            </Button>
-          </div>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-8 sm:py-12">
-        <div className="text-center max-w-4xl mx-auto mb-12">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-dark-charcoal mb-6">
-            About ColorSnap
-          </h1>
-          <p className="text-lg sm:text-xl text-slate-gray mb-8 max-w-3xl mx-auto">
-            ColorSnap is a powerful, privacy-first color extraction tool designed for modern designers and developers.
-            We believe great design starts with great colors, and we're here to make color palette creation effortless.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
-            <div className="flex items-center text-sm text-slate-gray">
-              <Shield className="w-4 h-4 mr-2 text-vivid-teal" />
-              Privacy-First
-            </div>
-            <div className="flex items-center text-sm text-slate-gray">
-              <Zap className="w-4 h-4 mr-2 text-vivid-teal" />
-              Lightning Fast
-            </div>
-            <div className="flex items-center text-sm text-slate-gray">
-              <Heart className="w-4 h-4 mr-2 text-vivid-teal" />
-              Completely Free
-            </div>
-          </div>
-        </div>
-
-        {/* Features Section */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-dark-charcoal text-center mb-12">
-            Why Choose ColorSnap?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="border-0 shadow-lg bg-white/80 backdrop-blur-sm"
-                role="region"
-                aria-label={feature.title}
-              >
-                <CardHeader className="pb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-vivid-teal to-bright-coral rounded-lg flex items-center justify-center mb-4">
-                    <feature.icon className="w-6 h-6 text-white" />
+                      alt="ColorSnap Logo"
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
                   </div>
-                  <CardTitle className="text-lg text-dark-charcoal">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-slate-gray">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Use Cases Section */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-dark-charcoal text-center mb-12">
-            Perfect For
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {useCases.map((useCase, index) => (
-              <Card
-                key={index}
-                className="border-0 shadow-lg bg-white/80 backdrop-blur-sm"
-                role="region"
-                aria-label={useCase.title}
+                  <div>
+                    <h1 className="text-xl sm:text-2xl font-bold text-vivid-teal">
+                      ColorSnap
+                    </h1>
+                    <p className="text-xs sm:text-sm text-dark-charcoal">
+                      Images to Color Palettes
+                    </p>
+                  </div>
+                </Link>
+              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => navigate(-1)}
+                className="text-dark-charcoal border-dark-charcoal hover:bg-vivid-teal hover:text-white"
+                aria-label="Return to previous page"
               >
-                <CardHeader>
-                  <CardTitle className="text-lg text-dark-charcoal">{useCase.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-slate-gray">
-                    {useCase.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+                ← Back to Tool
+              </Button>
+            </div>
           </div>
-        </div>
+        </header>
 
-        {/* CTA Section */}
-        <div className="text-center">
-          <Card className="border-0 shadow-xl bg-gradient-to-r from-vivid-teal to-bright-coral text-white">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">Ready to Extract Colors?</h3>
-              <p className="text-lg mb-6 opacity-90">
-                Start creating beautiful color palettes from your images today.
-              </p>
-              <Link
-                to="/"
-                className="inline-block bg-white text-dark-charcoal px-6 py-3 rounded-lg hover:bg-slate-100 focus:ring-2 focus:ring-soft-lavender"
-                aria-label="Try ColorSnap color palette generator"
-              >
-                Try ColorSnap Now
-              </Link>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+        {/* Hero Section */}
+        <section className="container mx-auto px-4 py-8 sm:py-12">
+          <div className="text-center mx-auto mb-12">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-dark-charcoal mb-6">
+              About ColorSnap
+            </h1>
+            <p className="text-lg sm:text-xl text-slate-gray mb-8 mx-auto">
+              ColorSnap is a powerful, privacy-first color extraction tool designed for modern designers and developers.
+              We believe great design starts with great colors, and we're here to make color palette creation effortless.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+              <div className="flex items-center text-sm text-slate-gray">
+                <Shield className="w-4 h-4 mr-2 text-vivid-teal" />
+                Privacy-First
+              </div>
+              <div className="flex items-center text-sm text-slate-gray">
+                <Zap className="w-4 h-4 mr-2 text-vivid-teal" />
+                Lightning Fast
+              </div>
+              <div className="flex items-center text-sm text-slate-gray">
+                <Heart className="w-4 h-4 mr-2 text-vivid-teal" />
+                Completely Free
+              </div>
+            </div>
+          </div>
 
-      {/* Footer */}
-      <Footer />
-    </div>
+          {/* Features Section */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-dark-charcoal text-center mb-12">
+              Why Choose ColorSnap?
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {features.map((feature, index) => (
+                <Card
+                  key={index}
+                  className="border-0 shadow-lg bg-white/80 backdrop-blur-sm"
+                  role="region"
+                  aria-label={feature.title}
+                >
+                  <CardHeader className="pb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-vivid-teal to-bright-coral rounded-lg flex items-center justify-center mb-4">
+                      <feature.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <CardTitle className="text-lg text-dark-charcoal">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-slate-gray">
+                      {feature.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Use Cases Section */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-dark-charcoal text-center mb-12">
+              Perfect For
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {useCases.map((useCase, index) => (
+                <Card
+                  key={index}
+                  className="border-0 shadow-lg bg-white/80 backdrop-blur-sm"
+                  role="region"
+                  aria-label={useCase.title}
+                >
+                  <CardHeader>
+                    <CardTitle className="text-lg text-dark-charcoal">{useCase.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-slate-gray">
+                      {useCase.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center">
+            <Card className="border-0 shadow-xl bg-gradient-to-r from-vivid-teal to-bright-coral text-white">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4">Ready to Extract Colors?</h3>
+                <p className="text-lg mb-6 opacity-90">
+                  Start creating beautiful color palettes from your images today.
+                </p>
+                <Link
+                  to="/"
+                  className="inline-block bg-white text-dark-charcoal px-6 py-3 rounded-lg hover:bg-slate-100 focus:ring-2 focus:ring-soft-lavender"
+                  aria-label="Try ColorSnap color palette generator"
+                >
+                  Try ColorSnap Now
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <Footer />
+      </div>
   );
 };
 

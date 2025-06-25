@@ -268,7 +268,7 @@ const Index = () => {
           </div>
 
           {/* Main Content */}
-          <div className="space-y-6 sm:space-y-8 max-w-7xl mx-auto">
+          <div className="space-y-6 sm:space-y-8 mx-auto">
             {/* Top Row - Image Upload and Color Palette */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
               {/* Left Column - Upload */}

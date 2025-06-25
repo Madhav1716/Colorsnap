@@ -27,7 +27,7 @@ const ImageToTailwindTheme: React.FC = () => (
           </div>
         </div>
       </header>
-      <main className="container mx-auto px-4 py-8 sm:py-12 max-w-3xl">
+      <main className="container mx-auto px-4 py-8 sm:py-12">
         <article>
           <p className="text-sm text-gray-500 mb-2">Posted on June 23, 2025 by ColorSnap Team</p>
           <h1 className="text-3xl font-bold mb-6">Convert Image to Tailwind Theme – Generate Color Config Instantly</h1>
