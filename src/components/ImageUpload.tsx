@@ -62,11 +62,11 @@ const ImageUpload = memo(({ onImageUpload, isProcessing, uploadedImage, uploaded
         
         {uploadedImage ? (
           <div className="space-y-4">
-            <div className="relative w-full h-64 rounded-lg overflow-hidden bg-gray-100">
+            <div className="relative w-full h-64 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center">
               <img
                 src={uploadedImage}
                 alt={generateAltText(uploadedFileName)}
-                className="w-full h-full object-cover"
+                className="max-w-full max-h-full object-contain bg-white"
                 loading="lazy"
                 decoding="async"
                 role="img"
