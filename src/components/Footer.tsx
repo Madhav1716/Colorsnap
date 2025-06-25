@@ -53,16 +53,14 @@ const Footer: React.FC = () => {
             <div className="space-y-2">
               <Link
                 to="/about"
-                className="text-logo-blue hover:text-logo-orange text-sm block focus:outline-logo-blue"
-                aria-label="About ColorSnap"
-              >
+                className="text-logo-blue hover:text-logo-orange text-sm block"
+                aria-label="About ColorSnap">
                 About ColorSnap
               </Link>
               <Link
                 to="/faq"
-                className="text-logo-blue hover:text-logo-orange text-sm block focus:outline-logo-blue"
-                aria-label="Frequently Asked Questions"
-              >
+                className="text-logo-blue hover:text-logo-orange text-sm block"
+                aria-label="Frequently Asked Questions">
                 Frequently Asked Questions
               </Link>
               <Link
@@ -71,13 +69,6 @@ const Footer: React.FC = () => {
                 aria-label="Privacy Policy"
               >
                 Privacy Policy
-              </Link>
-              <Link
-                to="/inspiration"
-                className="text-logo-blue hover:text-logo-orange text-sm block focus:outline-logo-blue"
-                aria-label="Color Palette Inspiration"
-              >
-                Inspiration
               </Link>
             </div>
           </div>
