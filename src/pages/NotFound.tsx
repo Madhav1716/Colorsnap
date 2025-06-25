@@ -1,10 +1,10 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Home, ArrowLeft, Palette, HelpCircle, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import Footer from '@/components/Footer';
+import { usePageMetadata } from "@/hooks/useMetadata";
 
 // Page-specific metadata for 404
 const notFoundMetadata = {
@@ -22,14 +22,6 @@ const notFoundMetadata = {
 const NotFound = () => {
   return (
     <>
-      {/* SEO Metadata with react-helmet-async */}
-      <Helmet>
-        <title>{notFoundMetadata.title}</title>
-        <meta name="description" content={notFoundMetadata.description} />
-        <meta name="robots" content="noindex, follow" />
-        <link rel="canonical" href={notFoundMetadata.alternates.canonical} />
-      </Helmet>
-
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
         {/* Header */}
         <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
@@ -39,7 +31,7 @@ const NotFound = () => {
                 <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center overflow-hidden">
                     <img 
-                      src="/favicon-512x512.png" 
+                      src="/favicon-512x512.webp" 
                       alt="ColorSnap Logo" 
                       className="w-full h-full object-contain"
                     />

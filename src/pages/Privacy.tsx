@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Shield, Eye, Lock, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
+import { usePageMetadata } from "@/hooks/useMetadata";
 
 // Page-specific metadata for Privacy
 const privacyMetadata = {
@@ -84,50 +84,14 @@ const Privacy = () => {
     },
   ];
 
+  usePageMetadata(
+    privacyMetadata.title,
+    privacyMetadata.description,
+    privacyMetadata.openGraph.images[0]?.url
+  );
+
   return (
     <>
-      {/* SEO Metadata with react-helmet-async */}
-      <Helmet>
-        <title>{privacyMetadata.title}</title>
-        <meta name="description" content={privacyMetadata.description} />
-        <meta name="keywords" content={privacyMetadata.keywords.join(', ')} />
-        <link rel="canonical" href={privacyMetadata.alternates.canonical} />
-        {/* Open Graph */}
-        <meta property="og:title" content={privacyMetadata.openGraph.title} />
-        <meta property="og:description" content={privacyMetadata.openGraph.description} />
-        <meta property="og:image" content={privacyMetadata.openGraph.images[0].url} />
-        <meta property="og:image:alt" content={privacyMetadata.openGraph.images[0].alt} />
-        <meta property="og:url" content={privacyMetadata.openGraph.url} />
-        <meta property="og:type" content={privacyMetadata.openGraph.type} />
-        <meta property="og:site_name" content={privacyMetadata.openGraph.siteName} />
-        {/* Twitter */}
-        <meta name="twitter:card" content={privacyMetadata.twitter.card} />
-        <meta name="twitter:title" content={privacyMetadata.twitter.title} />
-        <meta name="twitter:description" content={privacyMetadata.twitter.description} />
-        <meta name="twitter:image" content={privacyMetadata.twitter.images[0]} />
-        <meta name="twitter:creator" content={privacyMetadata.twitter.creator} />
-        <meta name="twitter:site" content={privacyMetadata.twitter.site} />
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            name: 'Privacy Policy - ColorSnap',
-            description: 'Learn how ColorSnap protects your privacy with no data collection and local processing only.',
-            url: 'https://colorsnap.design/privacy',
-            isPartOf: {
-              '@type': 'WebSite',
-              name: 'ColorSnap',
-              url: 'https://colorsnap.design'
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'ColorSnap'
-            }
-          })}
-        </script>
-      </Helmet>
-
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
         {/* Header */}
         <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
@@ -137,7 +101,7 @@ const Privacy = () => {
                 <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center overflow-hidden">
                     <img 
-                      src="/favicon-512x512.png" 
+                      src="/favicon-512x512.webp" 
                       alt="ColorSnap Logo" 
                       className="w-full h-full object-contain"
                     />

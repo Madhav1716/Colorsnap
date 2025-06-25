@@ -79,11 +79,11 @@ export const metadata = {
   metadataBase: new URL("https://colorsnap.design"),
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon-16x16.webp",
+    apple: "/apple-touch-icon.webp",
     other: [
-      { rel: "icon", url: "/favicon-32x32.png", sizes: "32x32" },
-      { rel: "icon", url: "/favicon-192x192.png", sizes: "192x192" },
+      { rel: "icon", url: "/favicon-32x32.webp", sizes: "32x32" },
+      { rel: "icon", url: "/favicon-192x192.webp", sizes: "192x192" },
     ],
   },
   manifest: "/site.webmanifest",

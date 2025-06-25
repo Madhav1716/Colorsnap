@@ -16,7 +16,7 @@ const ImageToTailwindTheme: React.FC = () => (
             <div className="flex items-center space-x-3">
               <a href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center overflow-hidden">
-                  <img src="/favicon-512x512.png" alt="ColorSnap Logo" className="w-full h-full object-contain" />
+                  <img src="/favicon-512x512.webp" alt="ColorSnap Logo" className="w-full h-full object-contain" loading="lazy" decoding="async" />
                 </div>
                 <div>
                   <h1 className="text-xl sm:text-2xl font-bold text-logo-navy">ColorSnap</h1>

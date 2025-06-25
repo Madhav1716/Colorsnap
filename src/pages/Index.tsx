@@ -209,7 +209,7 @@ const Index = () => {
                 <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center overflow-hidden">
                     <img 
-                      src="/favicon-512x512.png" 
+                      src="/favicon-512x512.webp" 
                       alt="ColorSnap Logo" 
                       className="w-full h-full object-contain"
                     />

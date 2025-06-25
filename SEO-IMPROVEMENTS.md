@@ -53,7 +53,7 @@ Update these URLs in `index.html`:
 
 - Generate proper favicon files (16x16, 32x32, 180x180)
 - Create an Open Graph image (1200x630px recommended)
-- Add apple-touch-icon.png
+- Add apple-touch-icon.webp
 
 ### 3. **Performance Optimization**
 
