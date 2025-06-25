@@ -1,5 +1,4 @@
 import React, { useState, useCallback, useMemo } from "react";
-import { Helmet } from 'react-helmet-async';
 import {
   Upload,
   Download,
@@ -30,6 +29,7 @@ import { trackColorExtraction, trackImageUpload } from "@/utils/analytics";
 import { trackColorExtractionPerformance } from "@/utils/performance";
 import Footer from '@/components/Footer';
 import { Link } from "react-router-dom";
+import { usePageMetadata } from "@/hooks/useMetadata";
 
 export interface Color {
   hex: string;
@@ -120,6 +120,12 @@ const Index = () => {
   const [uploadedFileName, setUploadedFileName] = useState<string | null>(null);
   const { toast } = useToast();
 
+  usePageMetadata(
+    indexMetadata.title,
+    indexMetadata.description,
+    indexMetadata.openGraph.images[0]?.url
+  );
+
   const handleImageUpload = useCallback(
     async (file: File) => {
       setIsProcessing(true);
@@ -194,62 +200,6 @@ const Index = () => {
 
   return (
     <>
-      {/* SEO Metadata with react-helmet-async */}
-      <Helmet>
-        <title>{indexMetadata.title}</title>
-        <meta name="description" content={indexMetadata.description} />
-        <meta name="keywords" content={indexMetadata.keywords.join(', ')} />
-        <link rel="canonical" href={indexMetadata.alternates.canonical} />
-        {/* Open Graph */}
-        <meta property="og:title" content={indexMetadata.openGraph.title} />
-        <meta property="og:description" content={indexMetadata.openGraph.description} />
-        <meta property="og:image" content={indexMetadata.openGraph.images[0].url} />
-        <meta property="og:image:alt" content={indexMetadata.openGraph.images[0].alt} />
-        <meta property="og:url" content={indexMetadata.openGraph.url} />
-        <meta property="og:type" content={indexMetadata.openGraph.type} />
-        <meta property="og:site_name" content={indexMetadata.openGraph.siteName} />
-        {/* Twitter */}
-        <meta name="twitter:card" content={indexMetadata.twitter.card} />
-        <meta name="twitter:title" content={indexMetadata.twitter.title} />
-        <meta name="twitter:description" content={indexMetadata.twitter.description} />
-        <meta name="twitter:image" content={indexMetadata.twitter.images[0]} />
-        <meta name="twitter:creator" content={indexMetadata.twitter.creator} />
-        <meta name="twitter:site" content={indexMetadata.twitter.site} />
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'ColorSnap',
-            description: 'Free, privacy-first color palette extraction tool for designers and developers',
-            url: 'https://colorsnap.design',
-            applicationCategory: 'DesignApplication',
-            operatingSystem: 'Web Browser',
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'USD'
-            },
-            featureList: [
-              'Advanced Color Extraction',
-              'Developer-Ready Output',
-              'Privacy-First Design',
-              'Lightning Fast Processing',
-              'Built for Professionals',
-              'Completely Free'
-            ],
-            author: {
-              '@type': 'Organization',
-              name: 'ColorSnap'
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'ColorSnap'
-            }
-          })}
-        </script>
-      </Helmet>
-
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
         {/* Header */}
         <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">

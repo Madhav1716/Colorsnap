@@ -19,7 +19,6 @@ import ImageToTailwindTheme from "./pages/blog/ImageToTailwindTheme";
 import BestFreePaletteTools2025Compare from "./pages/blog/BestFreePaletteTools2025Compare";
 import PhotoToCssGradientGenerator from "./pages/blog/PhotoToCssGradientGenerator";
 import ExtractDominantColorBranding from "./pages/blog/ExtractDominantColorBranding";
-import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -69,7 +68,6 @@ const App = () => {
                 path="/blog/extract-dominant-color-from-image-branding"
                 element={<ExtractDominantColorBranding />}
               />
-              <Route path="/contact" element={<Contact />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
