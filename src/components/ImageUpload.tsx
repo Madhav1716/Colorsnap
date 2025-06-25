@@ -44,7 +44,7 @@ const ImageUpload = memo(({ onImageUpload, isProcessing, uploadedImage, uploaded
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full max-w-md mx-auto">
       <div
         {...getRootProps()}
         className={cn(

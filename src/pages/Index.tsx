@@ -239,8 +239,8 @@ const Index = () => {
         </header>
 
         {/* Hero Section */}
-        <section>
-          <div className="text-center">
+        <section className="px-4 py-8">
+          <div className="mb-8 text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#23394a] mb-4 sm:mb-6">
               Turn Images Into
               <span className="text-[#fc6c2c] block">
@@ -251,7 +251,7 @@ const Index = () => {
               Upload an image to instantly get HEX, RGB, and Tailwind-compatible
               color palettes. 100% privacy-first and works in your browser.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center text-xs sm:text-sm text-gray-500">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs sm:text-sm text-gray-500">
               <div className="flex items-center">
                 <FileImage className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                 Browser-based
@@ -270,8 +270,8 @@ const Index = () => {
             {/* Top Row - Image Upload and Color Palette */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
               {/* Left Column - Upload */}
-              <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
-                <CardHeader>
+              <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm p-6 max-w-3xl mx-auto">
+                <CardHeader className="p-0 mb-4">
                   <CardTitle className="flex items-center text-lg sm:text-xl">
                     <Upload className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     Upload Image
@@ -280,7 +280,7 @@ const Index = () => {
                     Drag and drop or click to upload an image
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="p-0">
                   <ImageUpload
                     onImageUpload={handleImageUpload}
                     isProcessing={isProcessing}
@@ -314,7 +314,7 @@ const Index = () => {
 
             {/* Bottom Row - Code Output */}
             {hasColors && (
-              <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
+              <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm mt-8">
                 <CardHeader className="p-4 sm:p-6">
                   <CardTitle className="flex items-center text-lg sm:text-xl">
                     <Code2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />

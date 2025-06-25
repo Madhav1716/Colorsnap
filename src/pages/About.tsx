@@ -182,8 +182,8 @@ const About: React.FC = () => {
         </header>
 
         {/* Hero Section */}
-        <section>
-          <div className="text-center">
+        <section className="px-4 py-8">
+          <div className="mb-8 text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-dark-charcoal mb-6">
               About ColorSnap
             </h1>
@@ -191,7 +191,7 @@ const About: React.FC = () => {
               ColorSnap is a powerful, privacy-first color extraction tool designed for modern designers and developers.
               We believe great design starts with great colors, and we're here to make color palette creation effortless.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <div className="flex items-center text-sm text-slate-gray">
                 <Shield className="w-4 h-4 mr-2 text-vivid-teal" />
                 Privacy-First
