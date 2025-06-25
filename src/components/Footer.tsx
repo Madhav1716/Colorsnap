@@ -165,7 +165,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t pt-6 text-center text-logo-navy/80">
+        <div className="border-t pt-6 text-left text-logo-navy/80">
           <p className="mb-2 text-sm sm:text-base">
             © {new Date().getFullYear()} ColorSnap. Free and made for the creative
             community.

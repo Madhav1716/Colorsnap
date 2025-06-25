@@ -154,9 +154,9 @@ $accent: ${colors[2]?.hex || "#999999"};`
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="tailwind" className="space-y-3">
+        <TabsContent value="tailwind" className="space-y-3 text-left">
           <div className="flex items-center justify-between">
-            <h4 className="font-medium text-gray-900">
+            <h4 className="font-medium text-gray-900 text-left">
               Tailwind Configuration
             </h4>
             <Button
@@ -172,16 +172,16 @@ $accent: ${colors[2]?.hex || "#999999"};`
               <span>Copy</span>
             </Button>
           </div>
-          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-            <pre className="text-sm text-gray-100">
+          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto text-left">
+            <pre className="text-sm text-gray-100 text-left">
               <code>{tailwindCode}</code>
             </pre>
           </div>
         </TabsContent>
 
-        <TabsContent value="css" className="space-y-3">
+        <TabsContent value="css" className="space-y-3 text-left">
           <div className="flex items-center justify-between">
-            <h4 className="font-medium text-gray-900">CSS Custom Properties</h4>
+            <h4 className="font-medium text-gray-900 text-left">CSS Custom Properties</h4>
             <Button
               variant="outline"
               size="sm"
@@ -195,16 +195,16 @@ $accent: ${colors[2]?.hex || "#999999"};`
               <span>Copy</span>
             </Button>
           </div>
-          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-            <pre className="text-sm text-gray-100">
+          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto text-left">
+            <pre className="text-sm text-gray-100 text-left">
               <code>{cssCode}</code>
             </pre>
           </div>
         </TabsContent>
 
-        <TabsContent value="sass" className="space-y-3">
+        <TabsContent value="sass" className="space-y-3 text-left">
           <div className="flex items-center justify-between">
-            <h4 className="font-medium text-gray-900">Sass Variables</h4>
+            <h4 className="font-medium text-gray-900 text-left">Sass Variables</h4>
             <Button
               variant="outline"
               size="sm"
@@ -218,16 +218,16 @@ $accent: ${colors[2]?.hex || "#999999"};`
               <span>Copy</span>
             </Button>
           </div>
-          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-            <pre className="text-sm text-gray-100">
+          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto text-left">
+            <pre className="text-sm text-gray-100 text-left">
               <code>{sassCode}</code>
             </pre>
           </div>
         </TabsContent>
 
-        <TabsContent value="json" className="space-y-3">
+        <TabsContent value="json" className="space-y-3 text-left">
           <div className="flex items-center justify-between">
-            <h4 className="font-medium text-gray-900">JSON Output</h4>
+            <h4 className="font-medium text-gray-900 text-left">JSON Output</h4>
             <Button
               variant="outline"
               size="sm"
@@ -241,16 +241,16 @@ $accent: ${colors[2]?.hex || "#999999"};`
               <span>Copy</span>
             </Button>
           </div>
-          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-            <pre className="text-sm text-gray-100">
+          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto text-left">
+            <pre className="text-sm text-gray-100 text-left">
               <code>{jsonCode}</code>
             </pre>
           </div>
         </TabsContent>
 
-        <TabsContent value="csv" className="space-y-3">
+        <TabsContent value="csv" className="space-y-3 text-left">
           <div className="flex items-center justify-between">
-            <h4 className="font-medium text-gray-900">CSV Export</h4>
+            <h4 className="font-medium text-gray-900 text-left">CSV Export</h4>
             <Button
               variant="outline"
               size="sm"
@@ -264,16 +264,16 @@ $accent: ${colors[2]?.hex || "#999999"};`
               <span>Copy</span>
             </Button>
           </div>
-          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-            <pre className="text-sm text-gray-100">
+          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto text-left">
+            <pre className="text-sm text-gray-100 text-left">
               <code>{csvCode}</code>
             </pre>
           </div>
         </TabsContent>
 
-        <TabsContent value="figma" className="space-y-3">
+        <TabsContent value="figma" className="space-y-3 text-left">
           <div className="flex items-center justify-between">
-            <h4 className="font-medium text-gray-900">Figma Tokens</h4>
+            <h4 className="font-medium text-gray-900 text-left">Figma Tokens</h4>
             <Button
               variant="outline"
               size="sm"
@@ -287,8 +287,8 @@ $accent: ${colors[2]?.hex || "#999999"};`
               <span>Copy</span>
             </Button>
           </div>
-          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
-            <pre className="text-sm text-gray-100">
+          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto text-left">
+            <pre className="text-sm text-gray-100 text-left">
               <code>{figmaCode}</code>
             </pre>
           </div>
