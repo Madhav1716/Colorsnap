@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
       itemType="https://schema.org/WebApplication"
     >
       <div className="container mx-auto px-4 py-6 sm:py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-6 text-left">
           {/* ColorSnap Branding */}
           <div>
             <h3 className="font-semibold text-logo-navy mb-3">ColorSnap</h3>
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Contact & Newsletter */}
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-start text-left">
             <h3 className="font-semibold text-logo-navy mb-3">Connect With Us</h3>
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-1 items-start sm:items-center relative">
               <button
@@ -165,7 +165,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t pt-6 text-left text-logo-navy/80">
+        <div className="border-t pt-6 text-center text-logo-navy/80">
           <p className="mb-2 text-sm sm:text-base">
             © {new Date().getFullYear()} ColorSnap. Free and made for the creative
             community.
